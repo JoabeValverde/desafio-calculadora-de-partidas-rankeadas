@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class CalculadoraPartidasRankeadas {
 
+    // Função para calcular o nível baseado em vitórias e derrotas
     public static String calculaNivel(int vitorias, int derrotas) {
 
         int saldoVitoria = vitorias - derrotas;
         String nivel;
 
-
+        // Determina o nível com base no número de vitórias
         if (vitorias <= 10) {
             nivel = "Ferro";
         } else if (vitorias >= 11 && vitorias <= 20) {
@@ -25,6 +26,7 @@ public class CalculadoraPartidasRankeadas {
         } else {
             nivel = "Imortal";
         }
+        // Retorna o resultado incluindo a pontuação
         return "O Herói tem de saldo  " + saldoVitoria + " pontos e está no nível de " + nivel;
     }
 
@@ -44,9 +46,12 @@ public class CalculadoraPartidasRankeadas {
             System.out.println("Quantas derrotas teve o jogador?");
             int quantidadeDerrotas = scanner.nextInt();
 
+            // Calcula o nível e exibe o resultado
             String resultado = calculaNivel(quantidadeVitorias, quantidadeDerrotas);
             System.out.println(resultado);
         }
+        //Fecha Fecha o scanner
+        scanner.close();
     }
 }
 
